@@ -1,19 +1,24 @@
 .navbar{
   display: grid;
   grid-template-columns: 10% 90%;
-
+  .logo{
+    height: 7rem;
+    width: 7rem;
+  }
   .nav-links{
     position: relative;
     display: flex;
     justify-content: space-evenly;
-    top: 2.5rem;
+    top: 3rem;
     li {
       a{
         text-decoration: none;
-        color: black;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #FFC971;
+        text-shadow: 1px 1px black;
       }
      align-content: center;
-
     }
 
 

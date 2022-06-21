@@ -1,7 +1,11 @@
 @import "themes/coreStyles/home";
 @import "themes/coreStyles/header";
+@import "themes/featuresStyles/restaurant-list";
 @import "reset-css";
 
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
 
 body{
   background-color: #FF9505 ;

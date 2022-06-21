@@ -1,0 +1,71 @@
+.restaurant-list-container{
+  position: relative;
+  top: 20rem;
+  .restaurant-list{
+    display: flex;
+    justify-content: space-evenly;
+    li{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: #FFC971;
+      border: 2px solid #E2711D;
+      border-radius: 20px;
+      height: 15rem;
+      width: 12rem;
+      p{
+        align-self: center;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .menu-container{
+    position: relative;
+    top: 5rem;
+    display: flex;
+    justify-content: center;
+    .menu-div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 40rem;
+      height: 20rem;
+      border: #E2711D solid 2px;
+      border-radius: 20px;
+      .restaurant-info{
+        position: relative;
+        bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        h2{
+          font-size: 2.2rem;
+        }
+        h3{
+          font-size: 1.8rem;
+          align-self: center;
+          position: relative;
+          top: 1rem;
+        }
+      }
+      .lists-container{
+        display: flex;
+        .img-list{
+          position: relative;
+          right: 2rem;
+          li{
+            img{
+              height: 80px;
+              width: 95px;
+            }
+          }
+        }
+        .dishes-list{
+          li{
+            padding-bottom: 3.1rem;
+          }
+        }
+      }
+    }
+  }
+}

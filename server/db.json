@@ -3,48 +3,101 @@
     {
       "id": 1,
       "name": "Pizzeria da Gianni",
-      "menu": "Pizza a taglio"
+      "menu": {
+        "id": 1,
+        "name": "pizzeria",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Margherita",
+            "description": "Pomodoro e mozzarella",
+            "price": 10,
+            "img": "assets/margherita.png"
+          },
+          {
+            "id": 2,
+            "name": "Boscaiola",
+            "description": "Funghi e salsiccia",
+            "price": 12,
+            "img": "assets/boscaiola.png"
+          }
+        ]
+      }
     },
     {
       "id": 2,
-      "name": "Burger Princess",
-      "menu": "Fast food"
+      "name": "Burger Queen",
+      "menu": {
+        "id": 2,
+        "name": "Fast food",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Chicken slave",
+            "description": "Hamburgher con pollo",
+            "price": 1.50,
+            "img": "assets/chickenSlave.png"
+          },
+          {
+            "id": 2,
+            "name": "Bacon Queen",
+            "description": "Hamburgher con salsa al lime",
+            "price": 5,
+            "img": "assets/baconQueen.png"
+          }
+        ]
+      }
     },
     {
       "id": 3,
-      "name": "Jack outside the box",
-      "menu": "Fast food"
+      "name": "Fish lab",
+      "menu": {
+        "id": 3,
+        "name": "Pesce",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Chicken fish",
+            "description": "Orata al pollo (invenzione di martina)",
+            "price": 20,
+            "img": "assets/chickenFish.png"
+          },
+          {
+            "id": 2,
+            "name": "Fish chicken",
+            "description": "Pollo all'orata (invenzione di leonardo)",
+            "price": 2,
+            "img": "assets/FishChicken.png"
+          }
+        ]
+      }
     },
     {
       "id": 4,
       "name": "Jumpin' donuts",
-      "menu": "Ciambelle"
-    },
-    {
-      "name": "Lavatrice",
-      "menu": "grbe",
-      "id": 5
-    },
-    {
-      "name": "cesd",
-      "menu": "grbe",
-      "id": 6
-    },
-    {
-      "name": "",
-      "menu": "",
-      "id": 7
+      "menu": {
+        "id": 1,
+        "name": "Dolci",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Ciambolla",
+            "description": "Pan di spagna al sapone",
+            "price": 11,
+            "img": "assets/ciambella.png"
+          },
+          {
+            "id": 2,
+            "name": "Tirami in mezzo",
+            "description": "Prezzemolo",
+            "price": 10.50,
+            "img": "assets/tiramisu.png"
+          }
+        ]
+      }
     }
   ],
-  "Orders": [
-    {
-      "name": "Burger Princess",
-      "menu": "Fast food",
-      "dish": "",
-      "portionsNumber": 1,
-      "id": 1
-    }
-  ],
+  "Orders": [],
   "Menus": [
     {
       "id": 1,

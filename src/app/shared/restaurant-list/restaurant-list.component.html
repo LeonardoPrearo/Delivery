@@ -2,7 +2,31 @@
   <ul class="restaurant-list">
     <li *ngFor="let restaurant of restaurantList">
       <p>{{restaurant.name}}</p>
-      <p>{{restaurant.menu}}</p>
+      <p>{{restaurant.menu.name}}</p>
+      <button (click)="showMenu(restaurant)">Vedi menu</button>
     </li>
   </ul>
+
+  <div class="menu-container">
+    <div *ngIf="restaurant" class="menu-div">
+      <div class="restaurant-info">
+        <h2>{{restaurant.name}}</h2>
+        <h3>{{restaurant.menu.name}}</h3>
+      </div>
+      <div class="lists-container">
+        <ul class="img-list">
+          <li *ngFor="let dish of restaurant.menu.dishes" >
+            <img src="{{dish.img}}" alt="">
+          </li>
+        </ul>
+        <ul class="dishes-list">
+          <li *ngFor="let dish of restaurant.menu.dishes; let i = index">
+            <p>{{dish.name}}</p>
+            <p>{{dish.description}}</p>
+            <p>{{dish.price}}€</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

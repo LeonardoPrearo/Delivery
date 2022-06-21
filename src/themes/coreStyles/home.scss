@@ -1,6 +1,21 @@
 .immagine{
+  position: relative;
+  top: 8rem;
+  display: flex;
+  justify-content: flex-end;
+  height: 60rem;
+  .h1-div{
+    position: relative;
+    bottom: 2rem;
+    left: 2rem;
+    align-self: center;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #CC5803;
+    text-shadow: 2px 2px black;
+  }
   img{
-    height: 30rem;
-    width: 40rem;
+    height: 50rem;
+    width: 60rem;
   }
 }
