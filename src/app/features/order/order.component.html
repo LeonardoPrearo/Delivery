@@ -1,31 +1,34 @@
-<div>
-  <div>
-    <form [formGroup]="orderForm" (ngSubmit)="postOrder()" class="form">
-      <label for="name">Nome Ristorante</label>
+<div class="form-generic">
+  <div class="form-container">
+    <form [formGroup]="nameForm" (ngSubmit)="saveChoice()" class="form" *ngIf="!restaurant">
+      <label for="name" class="restaurant-name-label">Nome Ristorante</label>
       <select name="name" id="name" formControlName="name">
+        <option></option>
         <option *ngFor="let restaurant of restaurantsList">{{restaurant.name}}</option>
       </select>
-      <label for="menu">Menu Ristorante</label>
-      <select name="menu" id="menu" formControlName="menu">
-        <option *ngFor="let restaurant of restaurantsList; let i = index">{{restaurant.menu}}</option>
-      </select>
-      <label for="dish"></label>
-      <select name="dish" id="dish" formControlName="dish">
-        <option *ngFor="let restaurant of restaurantsList">{{restaurant.menu}}</option>
-      </select>
-      <label for="portionsNumber"></label>
-      <input type="number" name="portionsNumber" id="portionsNumber" formControlName="portionsNumber">
-      <button type="submit" class="form-button">Completa ordine</button>
+      <button type="submit">Invia</button>
     </form>
+    <form [formGroup]="orderForm" (ngSubmit)="postOrder()" class="form" *ngIf="restaurant">
+        <label for="name"></label>
+        <select name="name" id="name" formControlName="name" *ngIf="!restaurant">
+        </select>
+        <label for="dish" class="dish-label">Seleziona il tuo piatto</label>
+        <select name="dish" id="dish" formControlName="dish" class="dish-select">
+          <option></option>
+          <option *ngFor="let dish of restaurant.menu.dishes">{{dish.name}} {{dish.price}}€</option>
+        </select>
+        <label for="portionsNumber" class="portions-label">Inserisci il numero di porzioni</label>
+        <input type="number" name="portionsNumber" id="portionsNumber" formControlName="portionsNumber">
+        <button type="submit" class="form-button" [disabled]="orderForm.invalid">Completa ordine</button>
+      </form>
   </div>
-  <div *ngIf="ordersList">
-    <ul  *ngFor="let order of ordersList">
+  <div *ngIf="order" class="summary">
+    <ul *ngFor="let order of ordersList">
       <li><h2>{{order.name}}</h2></li>
-      <li><h2>{{order.menu}}</h2></li>
-      <li><h3>{{order}}</h3></li>
-      <li><h4>{{order.portionsNumber}}</h4></li>
+      <li><h2>{{order.dish}}</h2></li>
+      <li><h4>{{order.portionsNumber}} porzioni</h4></li>
       <button (click)="deleteOrder(order.id)">Elimina ordine</button>
-      <button (click)="updateOrder(order)">Modifica ordine</button>
+      <button (click)="updateOrder(order)" disabled>Modifica ordine</button>
     </ul>
   </div>
 

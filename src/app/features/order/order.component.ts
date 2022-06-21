@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Restaurant} from "../../core/models/restaurant";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RestaurantService} from "../../core/services/restaurant-service/restaurant.service";
 import {Subscription} from "rxjs";
 import {Order} from "../../core/models/order";
-import {Menu} from "../../core/models/menu";
 import {OrderService} from "../../core/services/order-service/order.service";
 
 @Component({
@@ -14,10 +13,13 @@ import {OrderService} from "../../core/services/order-service/order.service";
 })
 export class OrderComponent implements OnInit {
 
+  boh : any;
+  order : Order;
   ordersList : Order[];
   restaurantsList : Restaurant[];
-  menusList : Menu[];
+  restaurant : Restaurant;
   orderForm : FormGroup;
+  nameForm: FormGroup;
   restaurantGetSubscription: Subscription;
   orderGetSubscription: Subscription;
   orderPostSubscription: Subscription;
@@ -28,12 +30,15 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderForm = new FormGroup({
-        name: new FormControl(""),
-        menu: new FormControl(""),
-        dish: new FormControl(""),
-        portionsNumber: new FormControl("")
+        name: new FormControl("", Validators.compose([Validators.required])),
+        dish: new FormControl("", Validators.compose([Validators.required])),
+        portionsNumber: new FormControl("", Validators.compose([Validators.required, Validators.min(2), Validators.max(15)]))
       }
     )
+
+    this.nameForm = new FormGroup({
+      name: new FormControl("", Validators.compose([Validators.required]))
+    })
 
     this.getAllRestaurants();
 
@@ -50,7 +55,9 @@ export class OrderComponent implements OnInit {
 
   getAllOrders(){
     this.orderGetSubscription  = this.orderService.getAllOrders().subscribe(
-      observer => {this.ordersList = [...observer]},
+      observer => {this.ordersList = [...observer]
+        console.log(this.ordersList)
+        console.log(this.order)},
       error => {
         console.log(error)
       }
@@ -59,15 +66,14 @@ export class OrderComponent implements OnInit {
 
   postOrder() {
     const newOrder = this.orderForm.value;
-    if (!this.ordersList.includes(newOrder)){this.orderPostSubscription = this.orderService.postOrder(newOrder).subscribe(
+    this.orderPostSubscription = this.orderService.postOrder(newOrder).subscribe(
       observer => {this.orderForm.reset()
-      this.getAllOrders()},
+        this.getAllOrders()
+        this.order = {...newOrder}
+        },
       error => {
         console.log(error)}
-    )}
-    else {
-
-    }
+    )
   }
 
   deleteOrder(id: number) {
@@ -88,6 +94,18 @@ export class OrderComponent implements OnInit {
     }
   )
   }
+
+  saveChoice() {
+    const newName = this.nameForm.value
+    const newOrder = this.orderForm.value
+    newOrder.name = {...newName}
+    this.restaurant = {...newName}
+    this.boh = this.restaurantsList.find(el => el.name === this.restaurant.name)
+    this.restaurant = this.boh
+    this.nameForm.reset()
+    this.orderForm.patchValue(this.restaurant)
+  }
+
 
   ngOnDestroy() {
     this.restaurantGetSubscription?.unsubscribe();

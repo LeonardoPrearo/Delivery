@@ -1,6 +1,6 @@
 .restaurant-list-container{
   position: relative;
-  top: 20rem;
+  top: 20vh;
   .restaurant-list{
     display: flex;
     justify-content: space-evenly;
@@ -35,17 +35,19 @@
       border-radius: 20px;
       .restaurant-info{
         position: relative;
-        bottom: 2rem;
+        bottom: 0.7rem;
         display: flex;
         flex-direction: column;
         h2{
           font-size: 2.2rem;
+          font-weight: bold;
         }
         h3{
           font-size: 1.8rem;
           align-self: center;
           position: relative;
-          top: 1rem;
+          top: 0.5rem;
+          font-weight: 400;
         }
       }
       .lists-container{
@@ -61,10 +63,17 @@
           }
         }
         .dishes-list{
-          li{
-            padding-bottom: 3.1rem;
+          li:first-child{
+            padding-top: 1rem;
+            padding-bottom: 2rem;
           }
         }
+      }
+      button{
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        background-color: #84BD93;
+        font-size:1.5rem;
       }
     }
   }

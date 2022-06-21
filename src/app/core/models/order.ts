@@ -6,6 +6,6 @@ export interface Order {
   "id" : number,
   "name": Restaurant,
   "menu": Menu,
-  "dishes": Dish,
+  "dish": Dish,
   "portionsNumber": number
 }
