@@ -1,0 +1,8 @@
+.navbar{
+  display: grid;
+  grid-template-columns: 10% 90%;
+  .nav-links{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "Restaurants": [
+    {
+      "id": 1,
+      "name": "Pizzeria da Gianni",
+      "menu": "Pizza a taglio"
+    },
+    {
+      "id": 2,
+      "name": "Burger Princess",
+      "menu": "Fast food"
+    },
+    {
+      "id": 3,
+      "name": "Jack outside the box",
+      "menu": "Fast food"
+    },
+    {
+      "id": 4,
+      "name": "Jumpin' donuts",
+      "menu": "Ciambelle"
+    }
+  ],
+  "Orders": [
+    {
+      "name": "Burger Princess",
+      "menu": "Ciambelle",
+      "dish": "",
+      "portionsNumber": 3,
+      "id": 1
+    },
+    {
+      "name": "Burger Princess",
+      "menu": "Fast food",
+      "dish": "",
+      "portionsNumber": 2,
+      "id": 2
+    },
+    {
+      "name": "Burger Princess",
+      "menu": "Fast food",
+      "dish": "",
+      "portionsNumber": 8,
+      "id": 3
+    },
+    {
+      "name": "Jack outside the box",
+      "menu": "Fast food",
+      "dish": "",
+      "portionsNumber": 3,
+      "id": 4
+    }
+  ],
+  "Menus": [
+    {
+      "id": 1,
+      "name": "Pizza a taglio"
+    },
+    {
+      "id": 2,
+      "name": "Fast food"
+    },
+    {
+      "id": 3,
+      "name": "Fast food"
+    },
+    {
+      "id": 4,
+      "name": "Ciambelle"
+    }
+  ],
+  "Dishes": []
+}

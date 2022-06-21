@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <form [formGroup]="orderForm" (ngSubmit)="postOrder()" class="form">
+      <label for="name">Nome Ristorante</label>
+      <select name="name" id="name" formControlName="name">
+        <option *ngFor="let restaurant of restaurantsList">{{restaurant.name}}</option>
+      </select>
+      <label for="menu">Menu Ristorante</label>
+      <select name="menu" id="menu" formControlName="menu">
+        <option *ngFor="let restaurant of restaurantsList; let i = index">{{restaurant.menu}}</option>
+      </select>
+      <label for="dish"></label>
+      <select name="dish" id="dish" formControlName="dish">
+        <option *ngFor="let restaurant of restaurantsList">{{restaurant.menu.dishes}}</option>
+      </select>
+      <label for="portionsNumber"></label>
+      <input type="number" name="portionsNumber" id="portionsNumber" formControlName="portionsNumber">
+      <button type="submit" class="form-button">Completa ordine</button>
+    </form>
+  </div>
+  <div *ngIf="ordersList">
+    <ul  *ngFor="let order of ordersList">
+      <li><h2>{{order.name}}</h2></li>
+      <li><h2>{{order.menu}}</h2></li>
+      <li><h3>{{order.dishes}}</h3></li>
+      <li><h4>{{order.portionsNumber}}</h4></li>
+    </ul>
+  </div>
+
+</div>
