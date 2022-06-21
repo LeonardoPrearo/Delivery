@@ -19,36 +19,30 @@
       "id": 4,
       "name": "Jumpin' donuts",
       "menu": "Ciambelle"
+    },
+    {
+      "name": "Lavatrice",
+      "menu": "grbe",
+      "id": 5
+    },
+    {
+      "name": "cesd",
+      "menu": "grbe",
+      "id": 6
+    },
+    {
+      "name": "",
+      "menu": "",
+      "id": 7
     }
   ],
   "Orders": [
     {
       "name": "Burger Princess",
-      "menu": "Ciambelle",
+      "menu": "Fast food",
       "dish": "",
-      "portionsNumber": 3,
+      "portionsNumber": 1,
       "id": 1
-    },
-    {
-      "name": "Burger Princess",
-      "menu": "Fast food",
-      "dish": "",
-      "portionsNumber": 2,
-      "id": 2
-    },
-    {
-      "name": "Burger Princess",
-      "menu": "Fast food",
-      "dish": "",
-      "portionsNumber": 8,
-      "id": 3
-    },
-    {
-      "name": "Jack outside the box",
-      "menu": "Fast food",
-      "dish": "",
-      "portionsNumber": 3,
-      "id": 4
     }
   ],
   "Menus": [

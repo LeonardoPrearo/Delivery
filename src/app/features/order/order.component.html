@@ -24,6 +24,8 @@
       <li><h2>{{order.menu}}</h2></li>
       <li><h3>{{order.dishes}}</h3></li>
       <li><h4>{{order.portionsNumber}}</h4></li>
+      <button (click)="deleteOrder(order.id)">Elimina ordine</button>
+      <button (click)="updateOrder(order)">Modifica ordine</button>
     </ul>
   </div>
 

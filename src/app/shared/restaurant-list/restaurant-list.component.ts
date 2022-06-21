@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Restaurant} from "../../core/models/restaurant";
 import {RestaurantService} from "../../core/services/restaurant-service/restaurant.service";
 import {Subscription} from "rxjs";
@@ -8,7 +8,7 @@ import {Subscription} from "rxjs";
   templateUrl: './restaurant-list.component.html',
   styleUrls: ['./restaurant-list.component.scss']
 })
-export class RestaurantListComponent implements OnInit {
+export class RestaurantListComponent implements OnInit, OnDestroy{
 
   restaurantList : Restaurant[];
   restaurantSubscription : Subscription;
@@ -25,5 +25,9 @@ export class RestaurantListComponent implements OnInit {
       error => {
         console.log(error)}
     )
+  }
+
+  ngOnDestroy(): void {
+    this.restaurantSubscription?.unsubscribe()
   }
 }

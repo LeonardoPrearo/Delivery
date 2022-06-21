@@ -21,6 +21,8 @@ export class OrderComponent implements OnInit {
   restaurantGetSubscription: Subscription;
   orderGetSubscription: Subscription;
   orderPostSubscription: Subscription;
+  orderDeleteSubscription: Subscription;
+  orderUpdateSubscription: Subscription;
 
   constructor(private restaurantService : RestaurantService, private orderService : OrderService) { }
 
@@ -57,20 +59,44 @@ export class OrderComponent implements OnInit {
 
   postOrder() {
     const newOrder = this.orderForm.value;
-    this.orderPostSubscription = this.orderService.postOrder(newOrder).subscribe(
+    if (!this.ordersList.includes(newOrder)){this.orderPostSubscription = this.orderService.postOrder(newOrder).subscribe(
       observer => {this.orderForm.reset()
       this.getAllOrders()},
       error => {
         console.log(error)}
-    )
+    )}
+    else {
+
+    }
   }
 
+  deleteOrder(id: number) {
+  this.orderDeleteSubscription = this.orderService.deleteOrder(id).subscribe(
+    observer => {this.getAllOrders()},
+    error => {
+      console.log(error)
+    }
+  )
+  }
+
+  updateOrder(order: Order) {
+  this.orderUpdateSubscription = this.orderService.updateOrder(order).subscribe(
+    observer=> {this.orderForm.patchValue(order)
+    },
+    error => {
+      console.log(error)
+    }
+  )
+  }
 
   ngOnDestroy() {
     this.restaurantGetSubscription?.unsubscribe();
     this.orderPostSubscription?.unsubscribe();
     this.orderGetSubscription?.unsubscribe();
+    this.orderDeleteSubscription?.unsubscribe();
+    this.orderUpdateSubscription?.unsubscribe();
   }
+
 
 
 }
