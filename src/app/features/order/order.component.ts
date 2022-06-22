@@ -87,8 +87,10 @@ export class OrderComponent implements OnInit {
   }
 
   updateOrder(order: Order) {
-  this.orderUpdateSubscription = this.orderService.updateOrder(order).subscribe(
-    observer=> {this.orderForm.patchValue(order)
+    this.orderForm.patchValue(order)
+
+    this.orderUpdateSubscription = this.orderService.updateOrder(order).subscribe(
+    observer=> {
     },
     error => {
       console.log(error)

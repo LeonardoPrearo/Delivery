@@ -95,11 +95,33 @@
           }
         ]
       }
+    },
+    {
+      "name": "pieruccio",
+      "menu": {
+        "id": 3,
+        "name": "Pesce",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Chicken fish",
+            "description": "Orata al pollo (invenzione di martina)",
+            "price": 20,
+            "img": "assets/chickenFish.png"
+          },
+          {
+            "id": 2,
+            "name": "Fish chicken",
+            "description": "Pollo all'orata (invenzione di leonardo)",
+            "price": 2,
+            "img": "assets/FishChicken.png"
+          }
+        ]
+      },
+      "id": 5
     }
   ],
-  "Orders": [
-
-  ],
+  "Orders": [],
   "Menus": [
     {
       "id": 1,
