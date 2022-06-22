@@ -1,7 +1,8 @@
-@import "themes/coreStyles/home";
 @import "themes/coreStyles/header";
+@import "themes/featuresStyles/add-restaurant-form";
 @import "themes/featuresStyles/order";
-@import "themes/featuresStyles/restaurant-list";
+@import "themes/sharedStyles/restaurant-list";
+@import "themes/coreStyles/home";
 @import "reset-css";
 
 *{

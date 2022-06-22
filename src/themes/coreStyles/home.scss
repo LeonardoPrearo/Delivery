@@ -5,17 +5,55 @@
   justify-content: flex-end;
   height: 60rem;
   .h1-div{
+    display: flex;
+    flex-direction: column;
     position: relative;
-    bottom: 2rem;
+    bottom: 5rem;
     left: 2rem;
     align-self: center;
     font-size: 3rem;
     font-weight: 500;
     color: #CC5803;
     text-shadow: 2px 2px black;
+      .home-btn{
+        position: relative;
+        top: 2rem;
+        align-self: center;
+        width: 300px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        background-color: #84BD93;
+        font-size:1.5rem;
+        border: 2px solid #E2711D;
+    }
   }
   img{
-    height: 50rem;
-    width: 60rem;
+    animation: img 1s;
+    height: 40rem;
+    width: 50rem;
+  }
+}
+
+@keyframes img {
+  0%{
+    position: relative;
+    left: 2rem;
+    display: none;
+  }
+  35%{
+    display: inline;
+    left:1.5rem
+  }
+  50%{
+    position: relative;
+    left:1rem;
+  }
+  75%{
+    position: relative;
+    left:0.5rem;
+  }
+  100%{
+    position: relative;
+    left: 0;
   }
 }

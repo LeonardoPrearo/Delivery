@@ -1,0 +1,38 @@
+.form-container{
+  position: relative;
+  top: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .title{
+    position: relative;
+    bottom: 4rem;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 1px 2px #84BD93;
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button{
+      position: relative;
+      top: 1rem;
+    }
+  }
+  .get-restaurant-list{
+    position: relative;
+    top: 5rem;
+    display: flex;
+    justify-content: center;
+    li{
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+    }
+  }
+}

@@ -13,6 +13,14 @@
       border-radius: 20px;
       height: 15rem;
       width: 12rem;
+      button{
+        width: 80px;
+        align-self: center;
+        padding: 4px 4px 4px 4px;
+        background-color: #84BD93;
+        border-radius: 40px;
+        border: 2px solid #E2711D;
+      }
       p{
         align-self: center;
         font-size: 1.2rem;
@@ -20,6 +28,7 @@
     }
   }
   .menu-container{
+    animation: menu 2s;
     position: relative;
     top: 5rem;
     display: flex;
@@ -74,7 +83,20 @@
         border-radius: 10px;
         background-color: #84BD93;
         font-size:1.5rem;
+        border: 2px solid #E2711D;
       }
     }
+  }
+}
+
+@keyframes menu {
+  from{
+    display: none;
+    position: relative;
+    top: 0.5rem;
+  }
+  to{
+    position: relative;
+    display: inline;
   }
 }

@@ -1,6 +1,24 @@
-.form-generic{
+ .form-generic{
   position: relative;
   top: 10rem;
+   button{
+     width: 80px;
+     align-self: center;
+     padding: 4px 4px 4px 4px;
+     background-color: #84BD93;
+     border-radius: 40px;
+     border: 2px solid #E2711D;
+   }
+  .title{
+    position: relative;
+    bottom: 4rem;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 1px 2px #84BD93;
+  }
   .form-container{
     display: flex;
     justify-content: center;
@@ -8,6 +26,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      select{
+        padding-top: 0.3rem;
+      }
+      input{
+        padding-top: 0.3rem;
+      }
       .restaurant-name-label{
         position: relative;
         bottom: 0.4rem;
@@ -32,12 +56,31 @@
   }
   .summary{
     position: relative;
-    top: 5rem;
+    top: 10rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: #E2711D solid 2px;
-    border-radius: 20px;
+    justify-content: center;
+    .orders-div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50rem;
+      border: #E2711D solid 2px;
+      border-radius: 20px;
+      padding-bottom: 0.5rem;
+      .orders-list{
+        li{
+          padding-top: 0.5rem;
+          padding-bottom: 0.3rem;
+          h2{
+            font-size: 1.5rem;
+          }
+          h3{
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
   }
 }
 

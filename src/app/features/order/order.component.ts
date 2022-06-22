@@ -13,7 +13,8 @@ import {OrderService} from "../../core/services/order-service/order.service";
 })
 export class OrderComponent implements OnInit {
 
-  boh : any;
+  empty : Restaurant;
+  name : any;
   order : Order;
   ordersList : Order[];
   restaurantsList : Restaurant[];
@@ -56,8 +57,7 @@ export class OrderComponent implements OnInit {
   getAllOrders(){
     this.orderGetSubscription  = this.orderService.getAllOrders().subscribe(
       observer => {this.ordersList = [...observer]
-        console.log(this.ordersList)
-        console.log(this.order)},
+      },
       error => {
         console.log(error)
       }
@@ -67,10 +67,11 @@ export class OrderComponent implements OnInit {
   postOrder() {
     const newOrder = this.orderForm.value;
     this.orderPostSubscription = this.orderService.postOrder(newOrder).subscribe(
-      observer => {this.orderForm.reset()
+      observer => {
+        this.orderForm.reset()
         this.getAllOrders()
         this.order = {...newOrder}
-        },
+      },
       error => {
         console.log(error)}
     )
@@ -100,10 +101,10 @@ export class OrderComponent implements OnInit {
     const newOrder = this.orderForm.value
     newOrder.name = {...newName}
     this.restaurant = {...newName}
-    this.boh = this.restaurantsList.find(el => el.name === this.restaurant.name)
-    this.restaurant = this.boh
+    this.name = this.restaurantsList?.find(el => el.name === this.restaurant.name)
+    this.restaurant = this.name
     this.nameForm.reset()
-    this.orderForm.patchValue(this.restaurant)
+    this.orderForm?.patchValue(this.restaurant)
   }
 
 

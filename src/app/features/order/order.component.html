@@ -1,4 +1,5 @@
 <div class="form-generic">
+  <h2 class="title">Fai il tuo ordine</h2>
   <div class="form-container">
     <form [formGroup]="nameForm" (ngSubmit)="saveChoice()" class="form" *ngIf="!restaurant">
       <label for="name" class="restaurant-name-label">Nome Ristorante</label>
@@ -9,27 +10,28 @@
       <button type="submit">Invia</button>
     </form>
     <form [formGroup]="orderForm" (ngSubmit)="postOrder()" class="form" *ngIf="restaurant">
-        <label for="name"></label>
-        <select name="name" id="name" formControlName="name" *ngIf="!restaurant">
-        </select>
-        <label for="dish" class="dish-label">Seleziona il tuo piatto</label>
-        <select name="dish" id="dish" formControlName="dish" class="dish-select">
-          <option></option>
-          <option *ngFor="let dish of restaurant.menu.dishes">{{dish.name}} {{dish.price}}€</option>
-        </select>
-        <label for="portionsNumber" class="portions-label">Inserisci il numero di porzioni</label>
-        <input type="number" name="portionsNumber" id="portionsNumber" formControlName="portionsNumber">
-        <button type="submit" class="form-button" [disabled]="orderForm.invalid">Completa ordine</button>
-      </form>
+      <label for="name"></label>
+      <select name="name" id="name" formControlName="name" *ngIf="!restaurant">
+      </select>
+      <label for="dish" class="dish-label">Seleziona il tuo piatto</label>
+      <select name="dish" id="dish" formControlName="dish" class="dish-select">
+        <option></option>
+        <option *ngFor="let dish of restaurant.menu.dishes">{{dish.name}} {{dish.price}}€</option>
+      </select>
+      <label for="portionsNumber" class="portions-label">Inserisci il numero di porzioni</label>
+      <input type="number" name="portionsNumber" id="portionsNumber" formControlName="portionsNumber">
+      <button type="submit" class="form-button" [disabled]="orderForm.invalid">Completa ordine</button>
+    </form>
   </div>
   <div *ngIf="order" class="summary">
-    <ul *ngFor="let order of ordersList">
-      <li><h2>{{order.name}}</h2></li>
-      <li><h2>{{order.dish}}</h2></li>
-      <li><h4>{{order.portionsNumber}} porzioni</h4></li>
-      <button (click)="deleteOrder(order.id)">Elimina ordine</button>
-      <button (click)="updateOrder(order)" disabled>Modifica ordine</button>
-    </ul>
+    <div class="orders-div">
+      <ul *ngFor="let order of ordersList" class="orders-list">
+        <li><h2>{{order.name}}</h2></li>
+        <li><h2>{{order.dish}}</h2></li>
+        <li><h4>{{order.portionsNumber}} porzioni</h4></li>
+        <button (click)="deleteOrder(order.id)">Elimina ordine</button>
+        <button (click)="updateOrder(order)" disabled>Modifica ordine</button>
+      </ul>
+    </div>
   </div>
-
 </div>

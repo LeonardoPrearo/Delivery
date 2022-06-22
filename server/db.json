@@ -95,50 +95,10 @@
           }
         ]
       }
-    },
-    {
-      "name": "Leonardo Prearo",
-      "menu": "Prova",
-      "id": 5
     }
   ],
   "Orders": [
-    {
-      "name": "Burger Queen",
-      "dish": "Chicken slave 1.5€",
-      "portionsNumber": 2,
-      "id": 1
-    },
-    {
-      "name": "Fish lab",
-      "dish": "Fish chicken 2€",
-      "portionsNumber": 3,
-      "id": 2
-    },
-    {
-      "name": "Fish lab",
-      "dish": "Chicken fish 20€",
-      "portionsNumber": 2,
-      "id": 3
-    },
-    {
-      "name": "Fish lab",
-      "dish": "Chicken fish 20€",
-      "portionsNumber": 5,
-      "id": 4
-    },
-    {
-      "name": "Jumpin' donuts",
-      "dish": "Tirami in mezzo 10.5€",
-      "portionsNumber": 3,
-      "id": 5
-    },
-    {
-      "name": "Jumpin' donuts",
-      "dish": "Tirami in mezzo 10.5€",
-      "portionsNumber": 6,
-      "id": 6
-    }
+
   ],
   "Menus": [
     {

@@ -1,8 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Restaurant} from "../../core/models/restaurant";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RestaurantService} from "../../core/services/restaurant-service/restaurant.service";
 import {Subscription} from "rxjs";
+import {Menu} from "../../core/models/menu";
 
 @Component({
   selector: 'app-add-restaurant-form',
@@ -21,8 +22,8 @@ export class AddRestaurantFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.restaurantForm = new FormGroup({
-        name: new FormControl(""),
-        menu: new FormControl("")
+        name: new FormControl("", Validators.compose([Validators.required])),
+        menu : new FormControl("", Validators.compose([Validators.required]))
       }
     )
 
@@ -38,7 +39,8 @@ export class AddRestaurantFormComponent implements OnInit, OnDestroy {
   }
 
   postRestaurant() {
-    const newRestaurant : Restaurant= this.restaurantForm.value as Restaurant
+    const menuObject  = this.restaurantForm.value.menu as Menu
+    const newRestaurant : Restaurant = this.restaurantForm.value as Restaurant
     this.restaurantPostSubscription = this.restaurantService.addRestaurant(newRestaurant).subscribe(
       observer => {this.restaurantForm.reset()
       this.getAllRestaurants()},
@@ -51,5 +53,6 @@ export class AddRestaurantFormComponent implements OnInit, OnDestroy {
     this.restaurantGetSubscription?.unsubscribe();
     this.restaurantPostSubscription?.unsubscribe();
   }
+
 
 }

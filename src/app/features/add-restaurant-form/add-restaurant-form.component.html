@@ -1,18 +1,22 @@
 <div class="form-container">
-  <div>
+  <h2 class="title">Aggiungi un ristorante</h2>
+  <div class="form">
     <form [formGroup]="restaurantForm" (ngSubmit)="postRestaurant()" class="form">
       <label for="name">Nome Ristorante</label>
       <input name="name" id="name" formControlName="name">
       <label for="menu">Menu Ristorante</label>
-      <input name="menu" id="menu" formControlName="menu">
-      <button type="submit" value="Aggiungi ristorante" class="form-button">Aggiungi ristorante</button>
+      <select name="menu" id="menu" formControlName="menu">
+        <option></option>
+        <option *ngFor="let restaurant of restaurantList" [ngValue]="restaurant.menu">{{restaurant.menu.name}}</option>
+      </select>
+      <button type="submit" value="Aggiungi ristorante" class="form-button" [disabled]="restaurantForm.invalid">Aggiungi ristorante</button>
     </form>
   </div>
   <div class="get-restaurant-list">
     <ul>
       <li *ngFor="let restaurant of restaurantList">
         <p>{{restaurant.name}}</p>
-        <p>{{restaurant.menu}}</p>
+        <p>{{restaurant.menu.name}}</p>
       </li>
     </ul>
   </div>
